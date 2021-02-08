@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Contact List</title>
+</head>
+<body>
+    <div class="box" id="heading">
+        <h1><%= date %></h1>
+    </div>
+
+    <div class="box">
+        <% for(let i = 0; i < PhoneItems.length; i++) { %>
+            <form action="/delete" method="POST">
+                <div class="item">
+                    <input name="checkbox" value="<%= phoneItems[i].id %>" type="checkbox" onchange="this.form.submit()">
+                    <p><%= phonetems[i].description %></p>
+                </div>
+            </form>
+            
+        <% } %>
+
+        <form action="/" method="POST">
+            <input type="text" name="newContact" placeholder="Add New Contact">
+            <button type="submit">+</button>
+        </form>
+    </div>
+
+    <footer>
+        <span>B0000tz &#169 2021</span>
+    </footer>
+    
+</body>
+</html>
